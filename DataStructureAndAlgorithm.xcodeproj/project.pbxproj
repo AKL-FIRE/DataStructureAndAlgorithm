@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		18D06DA120172C3200C3AF74 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DA020172C3200C3AF74 /* main.cpp */; };
+		18D06DAE20172FAE00C3AF74 /* linearList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DAC20172FAE00C3AF74 /* linearList.cpp */; };
+		18D06DB4201731AE00C3AF74 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DB2201731AE00C3AF74 /* Exception.cpp */; };
+		18D06DB72017443F00C3AF74 /* arrayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DB52017443F00C3AF74 /* arrayList.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,13 @@
 /* Begin PBXFileReference section */
 		18D06D9D20172C3200C3AF74 /* DataStructureAndAlgorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructureAndAlgorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D06DA020172C3200C3AF74 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		18D06DAC20172FAE00C3AF74 /* linearList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = linearList.cpp; sourceTree = "<group>"; };
+		18D06DAD20172FAE00C3AF74 /* linearList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = linearList.hpp; sourceTree = "<group>"; };
+		18D06DB02017313600C3AF74 /* utlity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utlity.h; sourceTree = "<group>"; };
+		18D06DB2201731AE00C3AF74 /* Exception.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Exception.cpp; sourceTree = "<group>"; };
+		18D06DB3201731AE00C3AF74 /* Exception.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Exception.hpp; sourceTree = "<group>"; };
+		18D06DB52017443F00C3AF74 /* arrayList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = arrayList.cpp; sourceTree = "<group>"; };
+		18D06DB62017443F00C3AF74 /* arrayList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = arrayList.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +67,40 @@
 		18D06D9F20172C3200C3AF74 /* DataStructureAndAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
+				18D06DB12017318D00C3AF74 /* Exception */,
+				18D06DAF201730FE00C3AF74 /* Tool */,
+				18D06DAB20172F6B00C3AF74 /* LinearList */,
 				18D06DA020172C3200C3AF74 /* main.cpp */,
 			);
 			path = DataStructureAndAlgorithm;
+			sourceTree = "<group>";
+		};
+		18D06DAB20172F6B00C3AF74 /* LinearList */ = {
+			isa = PBXGroup;
+			children = (
+				18D06DAC20172FAE00C3AF74 /* linearList.cpp */,
+				18D06DAD20172FAE00C3AF74 /* linearList.hpp */,
+				18D06DB52017443F00C3AF74 /* arrayList.cpp */,
+				18D06DB62017443F00C3AF74 /* arrayList.hpp */,
+			);
+			path = LinearList;
+			sourceTree = "<group>";
+		};
+		18D06DAF201730FE00C3AF74 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				18D06DB02017313600C3AF74 /* utlity.h */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		18D06DB12017318D00C3AF74 /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				18D06DB2201731AE00C3AF74 /* Exception.cpp */,
+				18D06DB3201731AE00C3AF74 /* Exception.hpp */,
+			);
+			path = Exception;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D06DAE20172FAE00C3AF74 /* linearList.cpp in Sources */,
+				18D06DB72017443F00C3AF74 /* arrayList.cpp in Sources */,
+				18D06DB4201731AE00C3AF74 /* Exception.cpp in Sources */,
 				18D06DA120172C3200C3AF74 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
