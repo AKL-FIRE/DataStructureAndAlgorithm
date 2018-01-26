@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1838FF0820188A1900DEBB40 /* extendeLinearList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1838FF0620188A1900DEBB40 /* extendeLinearList.cpp */; };
+		1838FF0B20188AA400DEBB40 /* extendedChain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1838FF0920188AA400DEBB40 /* extendedChain.cpp */; };
 		18D06DA120172C3200C3AF74 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DA020172C3200C3AF74 /* main.cpp */; };
 		18D06DAE20172FAE00C3AF74 /* linearList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DAC20172FAE00C3AF74 /* linearList.cpp */; };
 		18D06DB4201731AE00C3AF74 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DB2201731AE00C3AF74 /* Exception.cpp */; };
 		18D06DB72017443F00C3AF74 /* arrayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DB52017443F00C3AF74 /* arrayList.cpp */; };
+		18D06DBA20175EF900C3AF74 /* chain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DB820175EF900C3AF74 /* chain.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +29,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1838FF0620188A1900DEBB40 /* extendeLinearList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = extendeLinearList.cpp; sourceTree = "<group>"; };
+		1838FF0720188A1900DEBB40 /* extendeLinearList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = extendeLinearList.hpp; sourceTree = "<group>"; };
+		1838FF0920188AA400DEBB40 /* extendedChain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = extendedChain.cpp; sourceTree = "<group>"; };
+		1838FF0A20188AA400DEBB40 /* extendedChain.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = extendedChain.hpp; sourceTree = "<group>"; };
 		18D06D9D20172C3200C3AF74 /* DataStructureAndAlgorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructureAndAlgorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D06DA020172C3200C3AF74 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		18D06DAC20172FAE00C3AF74 /* linearList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = linearList.cpp; sourceTree = "<group>"; };
@@ -35,6 +42,8 @@
 		18D06DB3201731AE00C3AF74 /* Exception.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Exception.hpp; sourceTree = "<group>"; };
 		18D06DB52017443F00C3AF74 /* arrayList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = arrayList.cpp; sourceTree = "<group>"; };
 		18D06DB62017443F00C3AF74 /* arrayList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = arrayList.hpp; sourceTree = "<group>"; };
+		18D06DB820175EF900C3AF74 /* chain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chain.cpp; sourceTree = "<group>"; };
+		18D06DB920175EF900C3AF74 /* chain.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = chain.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +91,12 @@
 				18D06DAD20172FAE00C3AF74 /* linearList.hpp */,
 				18D06DB52017443F00C3AF74 /* arrayList.cpp */,
 				18D06DB62017443F00C3AF74 /* arrayList.hpp */,
+				18D06DB820175EF900C3AF74 /* chain.cpp */,
+				18D06DB920175EF900C3AF74 /* chain.hpp */,
+				1838FF0620188A1900DEBB40 /* extendeLinearList.cpp */,
+				1838FF0720188A1900DEBB40 /* extendeLinearList.hpp */,
+				1838FF0920188AA400DEBB40 /* extendedChain.cpp */,
+				1838FF0A20188AA400DEBB40 /* extendedChain.hpp */,
 			);
 			path = LinearList;
 			sourceTree = "<group>";
@@ -161,8 +176,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D06DAE20172FAE00C3AF74 /* linearList.cpp in Sources */,
+				1838FF0B20188AA400DEBB40 /* extendedChain.cpp in Sources */,
 				18D06DB72017443F00C3AF74 /* arrayList.cpp in Sources */,
 				18D06DB4201731AE00C3AF74 /* Exception.cpp in Sources */,
+				18D06DBA20175EF900C3AF74 /* chain.cpp in Sources */,
+				1838FF0820188A1900DEBB40 /* extendeLinearList.cpp in Sources */,
 				18D06DA120172C3200C3AF74 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
