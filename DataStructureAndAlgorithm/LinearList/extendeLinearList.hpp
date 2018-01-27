@@ -12,7 +12,7 @@
 #include "linearList.hpp"
 
 template <typename T>
-class extendedLinearList :virtual public linearList<T>
+class extendedLinearList : virtual public linearList<T>
 {
 public:
     virtual ~extendedLinearList() {}

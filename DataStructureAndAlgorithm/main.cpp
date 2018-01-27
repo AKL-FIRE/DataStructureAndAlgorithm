@@ -35,7 +35,7 @@ int main(int argc, const char * argv[]) {
     std::cout << a << std::endl;
 }
 */
-
+/*
 #include "./LinearList/chain.hpp"
 #include "./LinearList//extendedChain.hpp"
 int main()
@@ -62,5 +62,55 @@ int main()
     b.push_back(333);
     std::cout << b << std::endl;
     extendedChain<int> c(b);
+    std::cout << c << std::endl;
+}*/
+/*
+#include "./Matrix/Matrix.hpp"
+int main()
+{
+    double s[9] = {1,0,0,0,1,0,0,0,1};
+    matrix<double> a(3,3,s);
+    std::cout << a << std::endl;
+    std::cout << a.transpose() << std::endl;
+    std::cout << a + 2 << std::endl;
+    std::cout << a - 2 << std::endl;
+    std::cout << a * 2 << std::endl;
+    std::cout << a / 2 << std::endl;
+    double d[9] = {1,3,5,2,4,6,0,0,0};
+    matrix<double> b(3,3,d);
+    std::cout << a + b << std::endl;
+    std::cout << a - b << std::endl;
+    std::cout << a * b << std::endl;
+}
+*/
+
+#include "./stack/derivedArrayStack.hpp"
+#include "./stack/arrayStack.hpp"
+#include "./stack/linkedStack.hpp"
+int main()
+{
+    derivedArrayStack<int> a(10);
+    a.push(1);
+    a.push(2);
+    a.push(3);
+    std::cout << a << std::endl;
+    std::cout << a.top() << std::endl;
+    a.pop();
+    std::cout << a << std::endl;
+    arrayStack<int> b(10);
+    b.push(1);
+    b.push(2);
+    b.push(3);
+    std::cout << b << std::endl;
+    std::cout << b.top() << std::endl;
+    b.pop();
+    std::cout << b << std::endl;
+    linkedStack<int> c(10);
+    c.push(1);
+    c.push(2);
+    c.push(3);
+    std::cout << c << std::endl;
+    std::cout << c.top() << std::endl;
+    c.pop();
     std::cout << c << std::endl;
 }

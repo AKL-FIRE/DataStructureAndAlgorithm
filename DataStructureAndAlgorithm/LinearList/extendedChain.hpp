@@ -32,16 +32,7 @@ public:
 protected:
     chainNode<T> *lastNode;
 };
-/*
-template <typename T>
-extendedChain<T>::extendedChain(const extendedChain<T> &x)
-{
-    chainNode<T> *p = chain<T>::firstNode;
-    for(int i = 0; i < chain<T>::listSize - 1; i++)
-        p = p->next;
-    lastNode = p;
-}
-*/
+
 template <typename T>
 void extendedChain<T>::insert(int theIndex,  const T &theElement)
 {

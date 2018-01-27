@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		1838FF0820188A1900DEBB40 /* extendeLinearList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1838FF0620188A1900DEBB40 /* extendeLinearList.cpp */; };
 		1838FF0B20188AA400DEBB40 /* extendedChain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1838FF0920188AA400DEBB40 /* extendedChain.cpp */; };
+		183A162E201AFFDD00E2D9B9 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183A162C201AFFDD00E2D9B9 /* Matrix.cpp */; };
 		18D06DA120172C3200C3AF74 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DA020172C3200C3AF74 /* main.cpp */; };
 		18D06DAE20172FAE00C3AF74 /* linearList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DAC20172FAE00C3AF74 /* linearList.cpp */; };
 		18D06DB4201731AE00C3AF74 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DB2201731AE00C3AF74 /* Exception.cpp */; };
 		18D06DB72017443F00C3AF74 /* arrayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DB52017443F00C3AF74 /* arrayList.cpp */; };
 		18D06DBA20175EF900C3AF74 /* chain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D06DB820175EF900C3AF74 /* chain.cpp */; };
+		18D633A6201C13300099CF57 /* stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D633A4201C13300099CF57 /* stack.cpp */; };
+		18D633A9201C13F00099CF57 /* derivedArrayStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D633A7201C13F00099CF57 /* derivedArrayStack.cpp */; };
+		18D633AC201C1C480099CF57 /* arrayStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D633AA201C1C480099CF57 /* arrayStack.cpp */; };
+		18D633AF201C1FC90099CF57 /* linkedStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D633AD201C1FC90099CF57 /* linkedStack.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +38,8 @@
 		1838FF0720188A1900DEBB40 /* extendeLinearList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = extendeLinearList.hpp; sourceTree = "<group>"; };
 		1838FF0920188AA400DEBB40 /* extendedChain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = extendedChain.cpp; sourceTree = "<group>"; };
 		1838FF0A20188AA400DEBB40 /* extendedChain.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = extendedChain.hpp; sourceTree = "<group>"; };
+		183A162C201AFFDD00E2D9B9 /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		183A162D201AFFDD00E2D9B9 /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
 		18D06D9D20172C3200C3AF74 /* DataStructureAndAlgorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructureAndAlgorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D06DA020172C3200C3AF74 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		18D06DAC20172FAE00C3AF74 /* linearList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = linearList.cpp; sourceTree = "<group>"; };
@@ -44,6 +51,14 @@
 		18D06DB62017443F00C3AF74 /* arrayList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = arrayList.hpp; sourceTree = "<group>"; };
 		18D06DB820175EF900C3AF74 /* chain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chain.cpp; sourceTree = "<group>"; };
 		18D06DB920175EF900C3AF74 /* chain.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = chain.hpp; sourceTree = "<group>"; };
+		18D633A4201C13300099CF57 /* stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stack.cpp; sourceTree = "<group>"; };
+		18D633A5201C13300099CF57 /* stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stack.hpp; sourceTree = "<group>"; };
+		18D633A7201C13F00099CF57 /* derivedArrayStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = derivedArrayStack.cpp; sourceTree = "<group>"; };
+		18D633A8201C13F00099CF57 /* derivedArrayStack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = derivedArrayStack.hpp; sourceTree = "<group>"; };
+		18D633AA201C1C480099CF57 /* arrayStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = arrayStack.cpp; sourceTree = "<group>"; };
+		18D633AB201C1C480099CF57 /* arrayStack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = arrayStack.hpp; sourceTree = "<group>"; };
+		18D633AD201C1FC90099CF57 /* linkedStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = linkedStack.cpp; sourceTree = "<group>"; };
+		18D633AE201C1FC90099CF57 /* linkedStack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = linkedStack.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183A162B201AFF3900E2D9B9 /* Matrix */ = {
+			isa = PBXGroup;
+			children = (
+				183A162C201AFFDD00E2D9B9 /* Matrix.cpp */,
+				183A162D201AFFDD00E2D9B9 /* Matrix.hpp */,
+			);
+			path = Matrix;
+			sourceTree = "<group>";
+		};
 		18D06D9420172C3200C3AF74 = {
 			isa = PBXGroup;
 			children = (
@@ -76,10 +100,12 @@
 		18D06D9F20172C3200C3AF74 /* DataStructureAndAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
+				18D06DA020172C3200C3AF74 /* main.cpp */,
+				18D633A3201C12D80099CF57 /* stack */,
+				183A162B201AFF3900E2D9B9 /* Matrix */,
 				18D06DB12017318D00C3AF74 /* Exception */,
 				18D06DAF201730FE00C3AF74 /* Tool */,
 				18D06DAB20172F6B00C3AF74 /* LinearList */,
-				18D06DA020172C3200C3AF74 /* main.cpp */,
 			);
 			path = DataStructureAndAlgorithm;
 			sourceTree = "<group>";
@@ -116,6 +142,21 @@
 				18D06DB3201731AE00C3AF74 /* Exception.hpp */,
 			);
 			path = Exception;
+			sourceTree = "<group>";
+		};
+		18D633A3201C12D80099CF57 /* stack */ = {
+			isa = PBXGroup;
+			children = (
+				18D633A4201C13300099CF57 /* stack.cpp */,
+				18D633A5201C13300099CF57 /* stack.hpp */,
+				18D633A7201C13F00099CF57 /* derivedArrayStack.cpp */,
+				18D633A8201C13F00099CF57 /* derivedArrayStack.hpp */,
+				18D633AA201C1C480099CF57 /* arrayStack.cpp */,
+				18D633AB201C1C480099CF57 /* arrayStack.hpp */,
+				18D633AD201C1FC90099CF57 /* linkedStack.cpp */,
+				18D633AE201C1FC90099CF57 /* linkedStack.hpp */,
+			);
+			path = stack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,10 +216,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183A162E201AFFDD00E2D9B9 /* Matrix.cpp in Sources */,
+				18D633A6201C13300099CF57 /* stack.cpp in Sources */,
 				18D06DAE20172FAE00C3AF74 /* linearList.cpp in Sources */,
 				1838FF0B20188AA400DEBB40 /* extendedChain.cpp in Sources */,
+				18D633AC201C1C480099CF57 /* arrayStack.cpp in Sources */,
+				18D633AF201C1FC90099CF57 /* linkedStack.cpp in Sources */,
 				18D06DB72017443F00C3AF74 /* arrayList.cpp in Sources */,
 				18D06DB4201731AE00C3AF74 /* Exception.cpp in Sources */,
+				18D633A9201C13F00099CF57 /* derivedArrayStack.cpp in Sources */,
 				18D06DBA20175EF900C3AF74 /* chain.cpp in Sources */,
 				1838FF0820188A1900DEBB40 /* extendeLinearList.cpp in Sources */,
 				18D06DA120172C3200C3AF74 /* main.cpp in Sources */,
