@@ -34,6 +34,8 @@ public:
     int size() const {return listSize;}
     T& get(int theIndex) const;
     int indexOf(const T&) const;
+    template <typename Comp>
+    int indexOf(const T&, Comp equal) const;
     void erase(int theIndex);
     void insert(int theIndex,const T &theElement);
     void output(std::ostream &out) const;
@@ -151,6 +153,23 @@ int chain<T>::indexOf(const T &theElement) const
         return index;
 }
 
+template<typename T>
+template<typename Comp>
+int chain<T>::indexOf(const T &theElement, Comp equal) const {
+    chainNode<T> *currentNode = firstNode;
+    int index = 0;
+    while(currentNode != nullptr && !equal(currentNode->element, theElement))
+    {
+        currentNode = currentNode->next;
+        index++;
+    }
+
+    if(currentNode == nullptr)
+        return -1;
+    else
+        return index;
+}
+
 template <typename T>
 void chain<T>::erase(int theIndex)
 {
@@ -202,6 +221,8 @@ void chain<T>::output(std::ostream &out) const
     for(chainNode<T> *currentNode = firstNode; currentNode != nullptr; currentNode = currentNode->next)
         out << currentNode->element << "  ";
 }
+
+
 
 template <typename T>
 std::ostream& operator<<(std::ostream &out, const chain<T> &x)

@@ -16,23 +16,23 @@
 template <typename T>
 class edge {
 public:
-    edge(const T& a, const T& b, double weight) : vertex1(a), vertex2(b), weight(weight) {};
-    T get_vertex1() const
+    edge(const int& a, const int& b, T weight) : vertex1(a), vertex2(b), weight(weight) {};
+    int get_vertex1() const
     {
         return vertex1;
     }
-    T get_vertex2() const
+    int get_vertex2() const
     {
         return vertex2;
     }
-    double get_weight() const
+    T get_weight() const
     {
         return weight;
     }
 
 private:
-    T vertex1, vertex2;
-    double weight;
+    int vertex1, vertex2;
+    T weight;
 };
 
 template <typename T>

@@ -7,6 +7,8 @@
 
 #include "graph.h"
 
+// Weighted Directed Graph By Adjacency Matrix
+
 template <typename T>
 class adjacencyWDigraph : public graph<T> {
 protected:

@@ -83,7 +83,7 @@ int main()
     std::cout << a * b << std::endl;
 }
 */
-
+/*
 #include "./stack/derivedArrayStack.hpp"
 #include "./stack/arrayStack.hpp"
 #include "./stack/linkedStack.hpp"
@@ -113,4 +113,99 @@ int main()
     std::cout << c.top() << std::endl;
     c.pop();
     std::cout << c << std::endl;
+}
+*/
+
+//#include "queue/arrayQueue.h"
+//
+//int main()
+//{
+//    arrayQueue<char> a(8);
+//    a.push('A');
+//    a.push('B');
+//    a.push('C');
+//    a.push('D');
+//    char f = a.front();
+//    char b = a.back();
+//    a.pop();
+//    a.push('E');
+//    a.push('F');
+//    a.push('G');
+//    a.push('H');
+//    a.push('I');
+//    a.push('J');
+//    a.push('K');
+//    f = a.front();
+//    b = a.back();
+//    a.pop();
+//}
+
+/*
+#include "graph/linkedWDigraph.h"
+int main()
+{
+    linkedWDigraph<int> a(6);
+    edge<int> e1(1, 2, 1);
+    edge<int> e2(1, 3, 12);
+    edge<int> e3(2, 3, 9);
+    edge<int> e4(2, 4, 3);
+    edge<int> e5(4, 3, 4);
+    edge<int> e6(3, 5, 5);
+    edge<int> e7(4, 5, 13);
+    edge<int> e8(4, 6, 15);
+    edge<int> e9(5, 6, 4);
+    a.insertEdge(&e1);
+    a.insertEdge(&e2);
+    a.insertEdge(&e3);
+    a.insertEdge(&e4);
+    a.insertEdge(&e5);
+    a.insertEdge(&e6);
+    a.insertEdge(&e7);
+    a.insertEdge(&e8);
+    a.insertEdge(&e9);
+    std::cout << "The number of vertices is: " << a.numberOfVertices() << std::endl;
+    std::cout << "The number of edges is: " << a.numberOfEdges() << std::endl;
+    std::cout << "The indegree of vertex 4 is :" << a.inDegree(4) << std::endl;
+    std::cout << "The outdegree of vertex 4 is :" << a.outDegree(4) << std::endl;
+    std::cout << (a.existsEdge(5, 6) ? "The edge existed" : "The edge not existed") << std::endl;
+    std::cout << (a.existsEdge(6, 5) ? "The edge existed" : "The edge not existed") << std::endl;
+    a.eraseEdge(5, 6);
+    std::cout << (a.existsEdge(5, 6) ? "The edge existed" : "The edge not existed") << std::endl;
+    std::cout << "The number of edges is: " << a.numberOfEdges() << std::endl;
+}
+ */
+
+#include "graph/linkedWGraph.h"
+int main()
+{
+    linkedWGraph<int> a(6);
+    edge<int> e1(1, 2, 1);
+    edge<int> e2(1, 3, 12);
+    edge<int> e3(2, 3, 9);
+    edge<int> e4(2, 4, 3);
+    edge<int> e5(4, 3, 4);
+    edge<int> e6(3, 5, 5);
+    edge<int> e7(4, 5, 13);
+    edge<int> e8(4, 6, 15);
+    edge<int> e9(5, 6, 4);
+    a.insertEdge(&e1);
+    a.insertEdge(&e2);
+    a.insertEdge(&e3);
+    a.insertEdge(&e4);
+    a.insertEdge(&e5);
+    a.insertEdge(&e6);
+    a.insertEdge(&e7);
+    a.insertEdge(&e8);
+    a.insertEdge(&e9);
+    std::cout << "The number of vertices is: " << a.numberOfVertices() << std::endl;
+    std::cout << "The number of edges is: " << a.numberOfEdges() << std::endl;
+    // std::cout << "The indegree of vertex 4 is :" << a.inDegree(4) << std::endl;
+    // std::cout << "The outdegree of vertex 4 is :" << a.outDegree(4) << std::endl;
+    std::cout << "The degree of vertex 4 is :" << a.degree(4) << std::endl;
+    std::cout << (a.existsEdge(5, 6) ? "The edge existed" : "The edge not existed") << std::endl;
+    std::cout << (a.existsEdge(6, 5) ? "The edge existed" : "The edge not existed") << std::endl;
+    a.eraseEdge(5, 6);
+    std::cout << (a.existsEdge(5, 6) ? "The edge existed" : "The edge not existed") << std::endl;
+    std::cout << (a.existsEdge(6, 5) ? "The edge existed" : "The edge not existed") << std::endl;
+    std::cout << "The number of edges is: " << a.numberOfEdges() << std::endl;
 }
