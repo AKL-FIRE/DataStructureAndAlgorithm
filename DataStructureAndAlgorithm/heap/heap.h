@@ -8,7 +8,10 @@
 #include <iterator>
 #include "../Tool/utlity.h"
 
+// IMPORTANT!!!!
 // To create a Min Heap, So the compare must means "<"
+// The heap required array[1...n], so you need to give an array of size "n + 1"
+// If you use the function sift_up or sift_down, you need to ++first before your calling the function
 namespace mine
 {
     template <typename _RandomAccessIterator, typename _Compare, typename _DistanceType>
@@ -87,7 +90,7 @@ namespace mine
 
     // swap the first element and the last element, you need to delete the last element.
     template <typename _RandomAccessIterator, typename _Compare>
-    inline void pop_heap(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compare _comp)
+    inline void  pop_heap(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compare _comp)
     {
         if(_last - _first <= 1)
             return;
@@ -98,19 +101,28 @@ namespace mine
         mine::sift_down(_first, (_first + 1) - _first, _last - _first, _comp);
     }
 
-    template <typename _RandomAccessIterator, typename _Compare>
-    inline void heap_sort(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compare _comp)
-    {
-        if(_last - _first < 2)
-            return;
-        for(auto i = 1; i <= (_last - _first); i++)
-            mine::pop_heap(_first, _last - (i - 1), _comp);
-    }
-
     template <typename _RandomAccessIterator, typename _Compare, typename _ValueType>
     inline void decrease_key(_RandomAccessIterator _first, _RandomAccessIterator _last, _RandomAccessIterator pos, _ValueType val, _Compare _comp)
     {
         _first++;
+        if(pos - _first >= 0 && _last - pos > 0)
+        {
+            if(_comp(val, *pos)) {
+                *pos = val;
+                mine::sift_up(_first, pos - _first + 1, _comp);
+            }
+            else {
+                *pos = val;
+                mine::sift_down(_first, pos - _first + 1, _last - _first, _comp);
+            }
+        }
+    }
+
+    template <typename _RandomAccessIterator, typename _Compare, typename _ValueType, typename _DistanceType>
+    inline void decrease_key(_RandomAccessIterator _first, _RandomAccessIterator _last, _DistanceType pos_d, _ValueType val, _Compare _comp)
+    {
+        _first++;
+        auto pos = _first + pos_d - 1;
         if(pos - _first >= 0 && _last - pos > 0)
         {
             if(_comp(val, *pos)) {
@@ -145,6 +157,16 @@ namespace mine
         {
             mine::sift_down(_first, i, _len, _comp);
         }
+    }
+
+    template <typename _RandomAccessIterator, typename _Compare>
+    inline void heap_sort(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compare _comp)
+    {
+        mine::make_heap(_first, _last, _comp);
+        if(_last - _first < 2)
+            return;
+        for(auto i = 1; i <= (_last - _first); i++)
+            mine::pop_heap(_first, _last - (i - 1), _comp);
     }
 };
 

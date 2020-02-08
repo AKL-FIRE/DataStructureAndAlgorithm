@@ -7,6 +7,10 @@
 #ifndef UNION_FIND_H
 #define UNION_FIND_H
 
+#include "../Exception/Exception.hpp"
+
+// The implementation of the union-find algorithm.
+
 struct unionFindNode {
     int parent; // The current node's parents, but when the current node means root, the parent indicates the tree weight(number of nodes)
     bool root; // The current node is or is not a root

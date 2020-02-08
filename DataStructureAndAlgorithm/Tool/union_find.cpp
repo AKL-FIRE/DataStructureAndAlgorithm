@@ -34,6 +34,8 @@ int unionFind::find(int theElement)
 
 void unionFind::unite(int rootA, int rootB)
 {
+    if(!node[rootA].root || !node[rootB].root)
+        throw illegalParameterValue("The input a or b is not a root.");
     if(node[rootA].parent < node[rootB].parent) // let tree A be the child of tree B
     {
         node[rootB].parent += node[rootA].parent;

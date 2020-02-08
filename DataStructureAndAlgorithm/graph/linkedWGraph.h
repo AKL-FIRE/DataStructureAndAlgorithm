@@ -6,6 +6,8 @@
 #define LINKEDWGRAPH_H
 
 #include "linkedWDigraph.h"
+#include "../heap/heap.h"
+#include "../Tool/union_find.h"
 
 // Undirected Weighted Graph By Linked List Derived from linkedWDigraph
 
@@ -20,6 +22,9 @@ public:
     int inDegree(int) const override;
     int outDegree(int) const override;
     bool directed() const override {return true;}
+
+    // Algorithms: 1.KRUSKAL 2.Prim
+    std::vector<edge<T>> kruskal();
 };
 
 template<typename T>
@@ -52,6 +57,40 @@ int linkedWGraph<T>::inDegree(int) const {
 template<typename T>
 int linkedWGraph<T>::outDegree(int) const {
     throw illegalParameterValue("Out degree is not defined.");
+}
+
+template<typename T>
+std::vector<edge<T>> linkedWGraph<T>::kruskal() {
+    std::vector<edge<T>> result;
+    std::vector<edge<T>> edges;
+    edges.push_back(edge<T>(-1, -1, T())); // placeholder
+    std::vector<bool> label(linkedWDigraph<T>::n + 1, false);
+
+    for(int i = 1; i <= linkedWDigraph<T>::n; i++)
+    {
+        auto it = linkedWDigraph<T>::iterator(i);
+        int v;
+        T weight;
+        while((v = it->next(weight)) != -1)
+        {
+            edges.push_back(edge<T>(i, v, weight));
+        }
+    }
+    // sort the edges
+    mine::heap_sort(edges.begin(), edges.end(), [](const auto& e1, const auto&e2){return e1.get_weight() < e2.get_weight();});
+    // create set
+    unionFind uf(linkedWDigraph<T>::e);
+    while(result.size() < linkedWDigraph<T>::n - 1)
+    {
+        edge<T> temp = edges.back();
+        edges.pop_back();
+        if(!uf.isInSameSet(temp.get_vertex1(), temp.get_vertex2()))
+        {
+            result.push_back(temp);
+            uf.unite(uf.find(temp.get_vertex1()), uf.find(temp.get_vertex2()));
+        }
+    }
+    return result;
 }
 
 
