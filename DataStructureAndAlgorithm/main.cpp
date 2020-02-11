@@ -225,13 +225,19 @@ int main()
     // insertSort(a.begin(), a.end(), std::greater<>());
     // bubbleSort(a.begin(), a.end(), std::greater<>());
 //    shellSort(a.begin(), a.end(), std::less<>());
+//    int b[] {6,10,9,5,3,11,4,8,1,2,7};
+//    mergeSort(b, b + 11, std::less<>());
+//    quickSort(a.begin(), a.end(), std::less<>());
 //    for(const auto& e : a)
 //        std::cout << e << ", ";
 //    std::cout << std::endl;
-    int b[] {6,10,9,5,3,11,4,8,1,2,7};
+
     //_mergeSortedLists(b, b + 2, b + 7, std::less<>());
-    mergeSort(b, b + 11, std::less<>());
-    for(const auto& e : b)
+
+    std::vector<int> c{9, 4, 5, 2, 1, 7, 4, 6};
+    mergeSort(c.begin(), c.end(), std::greater<>());
+
+    for(const auto& e : c)
         std::cout << e << ", ";
     std::cout << std::endl;
 }

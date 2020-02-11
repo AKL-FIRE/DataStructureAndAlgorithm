@@ -107,7 +107,7 @@ void shellSort(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compa
     }
 }
 
-// 5.Merge Sort
+// 5.BottomUp Sort and Merge Sort
 // Time complexity: O(nlogn)
 // Space complexity: O(n)
 // stable sort
@@ -115,11 +115,13 @@ void shellSort(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compa
 template <typename _RandomAccessIterator, typename _Compare>
 void _mergeSortedLists(_RandomAccessIterator _p, _RandomAccessIterator _q, _RandomAccessIterator _r, _Compare _comp)
 {
+    // _p, _q, _r point to the subarray A[p...q] A[q+1...r]
     auto size1 = _q - _p + 1;
     auto size2 = _r - (_q + 1) + 1;
     using _value_type = typename std::iterator_traits<_RandomAccessIterator>::value_type;
     _value_type *temp = new _value_type[size1 + size2];
-    _RandomAccessIterator s = _p, t = _q + 1, k = temp;
+    _RandomAccessIterator s = _p, t = _q + 1;
+    _value_type* k = temp;
     while(s - _q <= 0 && t - _r <= 0)
     {
         if(_comp(*s, *t))
@@ -142,7 +144,7 @@ void _mergeSortedLists(_RandomAccessIterator _p, _RandomAccessIterator _q, _Rand
 }
 
 template <typename _RandomAccessIterator, typename _Compare>
-void mergeSort(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compare _comp)
+void bottomUpSort(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compare _comp)
 {
     using _Distance_type = typename std::iterator_traits<_RandomAccessIterator>::difference_type;
     _Distance_type size = _last - _first;
@@ -161,4 +163,56 @@ void mergeSort(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compa
             _mergeSortedLists(_first + i, _first + i + s - 1, _first + size - 1, _comp);
     }
 }
+
+template <typename _RandomAccessIterator, typename _Compare>
+void mergeSort(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compare _comp)
+{
+    if((_last - _first) > 1)
+    {
+        auto mid = (_last - _first + 1) / 2 + _first - 1;
+        mergeSort(_first, mid + 1, _comp);
+        mergeSort(mid + 1, _last, _comp);
+        _mergeSortedLists(_first, mid, _last - 1, _comp);
+    }
+}
+// 6.Quick Sort
+// Time complexity: O(nlogn)
+// Space complexity: O(logn)
+// unstable sort
+// in-place sort
+template <typename _RandomAccessIterator, typename _Compare>
+_RandomAccessIterator _split(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compare _comp)
+{
+    auto i = _first;
+    auto x = *_first;
+    for(auto j = _first + 1; j != _last; ++j) {
+        if (!_comp(*j, x))
+            continue;
+        else {
+            i++;
+            if (i != j)
+                std::swap(*i, *j);
+        }
+    }
+    std::swap(*_first, *i);
+    return i;
+}
+
+template <typename _RandomAccessIterator, typename _Compare>
+void quickSort(_RandomAccessIterator _first, _RandomAccessIterator _last, _Compare _comp)
+{
+    if(_first != _last)
+    {
+        auto w = _split(_first, _last, _comp);
+        quickSort(_first, w, _comp);
+        quickSort(w + 1, _last, _comp);
+    }
+}
+
+// 7.Heap Sort
+// Time complexity: O(nlogn)
+// Space complexity: O(1)
+// unstable sort
+// in-place sort
+// #include "heap/heap.h"
 #endif //SORT_H
