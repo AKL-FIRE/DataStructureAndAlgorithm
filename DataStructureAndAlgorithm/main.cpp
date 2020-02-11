@@ -220,11 +220,18 @@ int main()
 
 int main()
 {
-    std::vector<int> a{8, 5, 2, 6, 9, 3, 1, 4, 0, 7};
+    // std::vector<int> a{8, 5, 2, 6, 9, 3, 1, 4, 0, 7};
     // selectSort(a.begin(), a.end(), std::less<>());
     // insertSort(a.begin(), a.end(), std::greater<>());
-    bubbleSort(a.begin(), a.end(), std::greater<>());
-    for(const auto& e : a)
+    // bubbleSort(a.begin(), a.end(), std::greater<>());
+//    shellSort(a.begin(), a.end(), std::less<>());
+//    for(const auto& e : a)
+//        std::cout << e << ", ";
+//    std::cout << std::endl;
+    int b[] {6,10,9,5,3,11,4,8,1,2,7};
+    //_mergeSortedLists(b, b + 2, b + 7, std::less<>());
+    mergeSort(b, b + 11, std::less<>());
+    for(const auto& e : b)
         std::cout << e << ", ";
     std::cout << std::endl;
 }
