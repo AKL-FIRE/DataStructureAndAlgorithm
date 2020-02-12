@@ -25,6 +25,7 @@ public:
 
     // Algorithms: 1.KRUSKAL 2.Prim
     std::vector<edge<T>> kruskal();
+    std::vector<edge<T>> prim(int theVertex, T infinity);
 };
 
 template<typename T>
@@ -90,6 +91,68 @@ std::vector<edge<T>> linkedWGraph<T>::kruskal() {
             uf.unite(uf.find(temp.get_vertex1()), uf.find(temp.get_vertex2()));
         }
     }
+    return result;
+}
+
+template<typename T>
+std::vector<edge<T>> linkedWGraph<T>::prim(int theVertex, T infinity) {
+    // initialize
+    std::vector<edge<T>> result;
+    std::vector<bool> X(linkedWDigraph<T>::n + 1, false); // Since the edges of the graph are bidirectional, avoid visiting edges that have already been visited
+    X[theVertex] = true;
+    std::vector<int> N(linkedWDigraph<T>::n + 1); // the nearest node linked by y
+    std::vector<std::pair<int, T>> H;
+    H.push_back(std::pair<int, T>(0, infinity)); // the heap algorithm needs A[1...n]
+    std::vector<T> distance(linkedWDigraph<T>::n + 1);
+    for(int i = 1; i <= linkedWDigraph<T>::n; i++)
+    {
+        if(i == theVertex)
+            continue;
+        weightedNode<T> temp(i, T());
+        int y;
+        if((y = linkedWDigraph<T>::aList[theVertex].indexOf(temp, [](const auto &e1, const auto &e2) -> bool { return e1.vertex == e2.vertex; })) != -1)
+        {
+            N[i] = theVertex;
+            distance[i] = linkedWDigraph<T>::aList[theVertex].get(y).weight;
+            H.push_back(std::pair<int, T>(i, distance[i]));
+        } else
+        {
+            distance[i] = infinity;
+        }
+    }
+    auto compare =  [](const auto& e1, const auto& e2){return e1.second < e2.second;};
+    mine::make_heap(H.begin(), H.end(), compare);
+
+    for(int j = 1; j <= linkedWDigraph<T>::n - 1; j++) {
+        int y = H[1].first;
+        mine::pop_heap(H.begin(), H.end(), compare);
+        H.pop_back();
+        result.emplace_back(y, N[y], distance[y]);
+        X[y] = true;
+        auto it = linkedWDigraph<T>::iterator(y);
+        int w;
+        T weight;
+        while((w = it->next(weight)) != -1)
+        {
+            if(X[w] == true)
+                continue;
+            if(weight < distance[w])
+            {
+                N[w] = y;
+                distance[w] = weight;
+            }
+            auto pos = std::find_if(H.begin(), H.end(), [w](const auto& e1){return e1.first == w;});
+            if(pos == H.end())
+            {
+                H.push_back(std::pair<int, T>(w, distance[w]));
+                mine::insert_heap(H.begin(), H.end(), compare);
+            } else
+            {
+                mine::decrease_key(H.begin(), H.end(), pos, std::pair<int, T>(w, distance[w]), compare);
+            }
+        }
+    }
+
     return result;
 }
 
